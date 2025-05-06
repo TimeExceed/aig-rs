@@ -16,5 +16,5 @@ logic-form = { path = "../logic-form", version = "0.3.3" }
 giputils = { path = "../giputils", version = "0.3.0" }
 
 [build-dependencies]
-cc = "1.0.99"
+cc = "1.2.20"
 giputils = { path = "../giputils", version = "0.3.0" }
