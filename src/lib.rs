@@ -16,8 +16,8 @@ pub use ternary::*;
 
 #[derive(Debug, Clone, Copy, Hash, PartialEq, Eq)]
 pub struct AigEdge {
-    id: usize,
-    complement: bool,
+    pub id: usize,
+    pub complement: bool,
 }
 
 impl Not for AigEdge {
@@ -141,8 +141,8 @@ pub enum AigNodeType {
 
 #[derive(Debug, Clone)]
 pub struct AigNode {
-    id: usize,
-    typ: AigNodeType,
+    pub id: usize,
+    pub typ: AigNodeType,
 }
 
 impl AigNode {
