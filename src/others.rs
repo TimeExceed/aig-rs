@@ -45,12 +45,12 @@ impl Aig {
         refine
     }
 
-    pub fn coi_refine(&self) -> (Aig, GHashMap<Var, Var>) {
+    pub fn coi_refine(&self, bad_index: usize) -> (Aig, GHashMap<Var, Var>) {
         let refine_root: Vec<usize> = self
             .constraints
             .iter()
             .chain(self.outputs.iter())
-            .chain(self.bads.iter())
+            .chain([&self.bads[bad_index]])
             .map(|e| e.node_id())
             .collect();
         let refine = self.coi(&refine_root);
