@@ -94,7 +94,7 @@ impl Aig {
             }
         }
         let outputs: Vec<AigEdge> = self.outputs.iter().filter_map(|n| edge_map(*n)).collect();
-        let bads: Vec<AigEdge> = self.bads.iter().filter_map(|n| edge_map(*n)).collect();
+        let bads: Vec<AigEdge> = [self.bads[bad_index]].iter().filter_map(|n| edge_map(*n)).collect();
         let constraints: Vec<AigEdge> = self
             .constraints
             .iter()
